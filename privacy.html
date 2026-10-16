@@ -78,7 +78,7 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-r
 <main>
 <a class="brand" href="./">MyQuarter</a>
 <h1>Privacy policy</h1>
-<p class="effective">Effective 12 October 2026. Last updated 12 October 2026.</p>
+<p class="effective">Effective 12 October 2026. Last updated 16 October 2026.</p>
 <nav class="contents" aria-label="Contents"><p>Contents</p><ul>
   <li><a href="#about-this-policy">About this policy</a></li>
   <li><a href="#the-short-version">The short version</a></li>
@@ -108,7 +108,7 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-r
 <ul>
   <li>What you write in MyQuarter is yours. We use it to run the app for you, and for nothing else.</li>
   <li>We do not sell your information, show you ads, or track you across other companies' apps and websites.</li>
-  <li>Some features send parts of what you have written to an AI provider (currently Google's Gemini) to write a suggestion or a summary. Three of them run on their own. Switching off &quot;AI suggestions&quot; in Settings does not stop those three, or Ask my coach. All of them are listed below.</li>
+  <li>Some features send parts of what you have written to an AI provider (currently Google's Gemini) to write a suggestion or a summary. None of them runs until you allow it, and you can turn them all off in Settings. Once allowed, three of them run on their own. All of them are listed below.</li>
   <li>Your account and what you write are stored in Sydney, Australia. Some of the services we use are in other countries, mostly the United States.</li>
   <li>You can delete your account, and everything you have written, at any time in Settings.</li>
 </ul>
@@ -117,8 +117,8 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-r
 <p>Information you give us:</p>
 <ul>
   <li>Account details: your email address and first name, and a password if you sign in with email. Passwords are stored by our sign-in provider only in scrambled (hashed) form. If you sign in with Google or Apple, we receive your name and email address from them. Apple may give us a private relay address instead of your real one, if you choose that.</li>
-  <li>What you write in the app: your vision across five life areas (physical, mental, relational, financial and professional), including your answers to prompts such as what you will no longer tolerate; your goals, due dates and lead actions; the days you tick an action off, and how many times; your habits and habit check-ins; your daily and weekly reflections; your priority cards, including any name you enter when you hand a card to someone; and how each goal turned out at the end of a season.</li>
-  <li>Your settings: theme, reminder and notification choices and times, time zone, and whether AI suggestions are on.</li>
+  <li>What you write in the app: your vision across five life areas (physical, mental, relational, financial and professional), including your answers to prompts such as what you will no longer tolerate; your goals, due dates and actions; the days you tick an action off, and how many times; your habits, the life area you file each one under, and your habit check-ins; your daily and weekly reflections; the notes you write in your journal; your priority cards, including any name you enter when you hand a card to someone; and how each goal turned out at the end of a season.</li>
+  <li>Your settings: theme, reminder and notification choices and times, time zone, and whether AI coaching is on.</li>
   <li>Information the app makes from yours: execution scores calculated from your ticks, and AI-written area summaries and weekly strengths and concerns, which are saved with your writing so they do not have to be written twice.</li>
 </ul>
 <p>Information collected automatically:</p>
@@ -130,7 +130,7 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-r
 
 <h2 id="sensitive-information">Sensitive information</h2>
 <p>The app asks you to think about your health, your money and your relationships. What you write may include health information or other information that privacy laws treat as sensitive.</p>
-<p>We only have it because you choose to write it, and we only use it to provide the features you use. By writing it in the app, you agree to us storing it and, for the AI features described below, sending it to our AI provider to produce the result. Nothing sensitive is needed for the app to work, and you can edit or delete what you have written at any time.</p>
+<p>We only have it because you choose to write it, and we only use it to provide the features you use. By writing it in the app, you agree to us storing it. It is sent to our AI provider, for the AI features described below, only if you allow them. Nothing sensitive is needed for the app to work, and you can edit or delete what you have written at any time.</p>
 <p>We never use it for advertising, never sell it, and never share it with anyone other than the service providers listed below, who handle it on our behalf.</p>
 <p>If you write about other people, such as a partner, a family member or a colleague, please keep it to what you need for your own planning.</p>
 
@@ -150,13 +150,14 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-r
 <p>What each feature sends:</p>
 <ul>
   <li>Area summaries (automatic): when you move away from one area of your vision, that area's text is sent to write the one-line summary shown on its card. This happens without you tapping anything.</li>
-  <li>Weekly strengths and concerns (automatic): when you open a week's review, we send the week number, your execution score, the lead actions you committed to with the goal each belongs to and how many you completed, and the daily reflections you wrote that week. The result is saved on that week so it is only written once.</li>
-  <li>End-of-season goal summaries (automatic): when you reach the &quot;Season complete&quot; screen at the end of your twelve weeks, each goal's title, its score, and its lead actions with your week-by-week counts are sent to write a short summary.</li>
+  <li>Weekly strengths and concerns (automatic): when you open a week's review, we send the week number, your execution score, the actions you committed to with the goal each belongs to and how many you completed, and the daily reflections you wrote that week. The result is saved on that week so it is only written once.</li>
+  <li>End-of-season goal summaries (automatic): when you reach the &quot;Season complete&quot; screen at the end of your twelve weeks, each goal's title, its score, and its actions with your week-by-week counts are sent to write a short summary.</li>
   <li>Ask my coach (when you tap it): your answers to the vision prompts for every area you have written, plus the text you are writing at the time, are sent to write a short coaching note.</li>
   <li>Suggest goals from your vision (when you tap it): the text of the vision area you choose, and the titles of the goals you already have, are sent to write goal ideas.</li>
-  <li>Suggest actions (when you tap it, while choosing a goal's weekly lead actions): the goal's title and due date, the names of the lead actions it already has, and the text of the vision area it belongs to (or just the goal's title, if it has none) are sent to write three suggested actions. Nothing is added to your goal unless you tap a suggestion.</li>
+  <li>Suggest actions (when you tap it, while choosing a goal's weekly actions): the goal's title and due date, the names of the actions it already has, and the text of the vision area it belongs to (or just the goal's title, if it has none) are sent to write three suggested actions. Nothing is added to your goal unless you tap a suggestion.</li>
+  <li>Check my week (when you tap it, while planning your first week): your goals' titles, each action's name, weekly count and days, your answers to the four reality-check questions (your free time on a weekday and on a weekend day, when you have the most energy, and which days are already full), and the text of your vision are sent to estimate how many hours your week asks for and suggest a time for each action. Your answers are not saved, and nothing is added to your plan or your calendar unless you do it yourself.</li>
 </ul>
-<p>The &quot;AI suggestions&quot; switch in Settings only hides &quot;Suggest goals from your vision&quot; and &quot;Suggest actions&quot;. It does not stop the three automatic features or Ask my coach. If you would rather none of your writing were sent to an AI provider, email <a href="mailto:jaspeng6@gmail.com">jaspeng6@gmail.com</a> before you use the app and we will tell you what we can do.</p>
+<p>AI features run only after you allow them, and you can turn them all off in Settings. The first time one would run, the app asks &quot;Use AI coaching?&quot; and sends nothing unless you tap &quot;Allow AI coaching&quot;. If you tap &quot;Not now&quot;, or later switch off &quot;Use AI coaching&quot; in Settings, none of your writing is sent to an AI provider, the automatic features included.</p>
 <p>AI providers may keep requests and responses for a limited time, for example to detect abuse, under their own terms.</p>
 
 <h2 id="analytics">Analytics</h2>
@@ -175,7 +176,7 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-r
 <h2 id="storage-on-your-phone">Storage on your phone</h2>
 <p>The app keeps some information on your phone so it works smoothly: your sign-in, kept in the iOS Keychain; your theme; which introductory screens you have seen; what you are writing before it saves (your name and vision before you sign up, today's reflection, a vision edit); and the last coaching notes and goal ideas the app showed you, together with the vision text they were written for. PostHog also keeps a random identifier, as described above.</p>
 <p>Signing out removes your sign-in, and any unsaved reflection or vision edit, from the phone. Deleting your account removes everything the app keeps on the phone you delete it from.</p>
-<p>Add to calendar: if you add a lead action to your calendar, the app opens Apple's own event screen, filled in with the action and its goal title. If you save it, the event goes into the calendar you choose, and that calendar's own service (for example iCloud or Google) receives it if it syncs. We save the date and time you picked so the app can show it back to you. The app does not read your calendar.</p>
+<p>Add to calendar: if you add an action to your calendar, the app opens Apple's own event screen, filled in with the action and its goal title. If you save it, the event goes into the calendar you choose, and that calendar's own service (for example iCloud or Google) receives it if it syncs. We save the date and time you picked so the app can show it back to you. The app does not read your calendar.</p>
 
 <h2 id="who-we-share-it-with">Who we share it with</h2>
 <p>We do not sell or rent your personal information. We share it only with the service providers that run parts of the app, and only what each one needs:</p>
@@ -201,7 +202,7 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-r
 
 <h2 id="deleting-your-account">Deleting your account</h2>
 <p>You can delete your account in Settings. You type DELETE to confirm, and the deletion happens straight away. There is no grace period and it cannot be undone.</p>
-<p>It permanently deletes your profile and everything you have written or recorded in the app: your vision, goals, lead actions, ticks, habits, weekly plans, daily and weekly reflections, priority cards, calendar entries, settings and notification choices.</p>
+<p>It permanently deletes your profile and everything you have written or recorded in the app: your vision, goals, actions, ticks, habits, weekly plans, daily and weekly reflections, priority cards, calendar entries, settings and notification choices.</p>
 <p>It also deletes your sign-in record (your email address, name, password and any linked Google or Apple sign-in), removes your email address from the beta invite list, and clears what the app keeps on that phone. Copies held by our providers, as described above, are not removed by the button. To have your analytics deleted as well, email <a href="mailto:jaspeng6@gmail.com">jaspeng6@gmail.com</a>.</p>
 
 <h2 id="your-rights">Your rights</h2>
