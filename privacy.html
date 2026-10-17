@@ -108,6 +108,7 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-r
 <ul>
   <li>What you write in MyQuarter is yours. We use it to run the app for you, and for nothing else.</li>
   <li>We do not sell your information, show you ads, or track you across other companies' apps and websites.</li>
+  <li>To see where the app is confusing or broken, we record how you use it: which screens you open, where you tap, recordings of the screen with every word hidden, and crash reports. Never what you type, unless you choose to send us feedback.</li>
   <li>Some features send parts of what you have written to an AI provider (currently Google's Gemini) to write a suggestion or a summary. None of them runs until you allow it, and you can turn them all off in Settings. Once allowed, three of them run on their own. All of them are listed below.</li>
   <li>Your account and what you write are stored in Sydney, Australia. Some of the services we use are in other countries, mostly the United States.</li>
   <li>You can delete your account, and everything you have written, at any time in Settings.</li>
@@ -124,7 +125,9 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-r
 </ul>
 <p>Information collected automatically:</p>
 <ul>
-  <li>Usage analytics: when you open and close the app, which screens you open, and when you complete key steps, such as finishing onboarding, creating a goal, ticking off an action or a habit, or asking for an AI suggestion. See &quot;Analytics&quot;.</li>
+  <li>Usage analytics: when you open and close the app, which screens you open, which buttons you tap, and when you complete key steps, such as finishing onboarding, creating a goal, ticking off an action or a habit, or asking for an AI suggestion. Which widgets you have added, and when you use them. See &quot;Analytics&quot;.</li>
+  <li>Screen recordings: how the app's screens look while you use them and where you tap, with every word on the screen hidden. See &quot;Analytics&quot;.</li>
+  <li>Crash and error reports: technical details of a crash or a request that failed. See &quot;Analytics&quot;.</li>
   <li>Technical information: your IP address, device model, iOS version, app version, and the times you use the app. Our database and analytics providers receive this as part of running their services.</li>
 </ul>
 <p>Before you create an account: you can start writing your vision before you sign up. What you write is kept on your phone, and the app signs you in anonymously so the AI features can work. When you create your account, that anonymous sign-in becomes your account. If you never create one, the anonymous sign-in stays on our servers until we remove it. There is no automatic clean-up for these yet.</p>
@@ -160,13 +163,17 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-r
 </ul>
 <p>AI features run only after you allow them, and you can turn them all off in Settings. The first time one would run, the app asks &quot;Use AI coaching?&quot; and sends nothing unless you tap &quot;Allow AI coaching&quot;. If you tap &quot;Not now&quot;, or later switch off &quot;Use AI coaching&quot; in Settings, none of your writing is sent to an AI provider, the automatic features included.</p>
 <p>AI providers may keep requests and responses for a limited time, for example to detect abuse, under their own terms.</p>
+<p>To keep the AI features working and their cost in check, our server records a few facts about each AI request in PostHog (see &quot;Analytics&quot;): which feature it was, which AI model answered, how long it took, how many words it used (counted in tokens), what it cost, and whether it worked. It never records what you wrote or what the AI wrote back.</p>
 
 <h2 id="analytics">Analytics</h2>
-<p>We use PostHog, on its United States cloud, to understand how the app is used, for example how many people finish onboarding or tick off an action. The app sends PostHog the name of each screen you open and named events such as &quot;goal created&quot; or &quot;lead action ticked&quot;, sometimes with a number or a label: the week number, a score, or which life area or AI feature was used.</p>
+<p>We use PostHog, on its United States cloud, to understand how the app is used and where it goes wrong, for example how many people finish onboarding or tick off an action. The app sends PostHog the name of each screen you open and named events such as &quot;goal created&quot; or &quot;lead action ticked&quot;, sometimes with a number or a label: the week number, a score, or which life area or AI feature was used.</p>
 <p>When you are signed in, these are linked to a random account ID. We never send PostHog your email address, your name, or anything you write, except a feedback note you choose to send (below).</p>
-<p>Automatic tap capture, session replay and error capture are switched off, so PostHog does not record what is on your screen or what you type. It does note when the same spot is tapped several times in a row: where on the screen, and the kind of control, never what it shows. That tells us something looked tappable and did not respond.</p>
+<p>Screen recordings (session replay): PostHog records how the app's screens look while you use them, and where you tap, so we can see where the app is confusing. Every word on the screen is hidden on your phone before the recording is sent: what you type, and the words already on the screen, such as your goals, your vision and your journal, show up as blank bars. The layout, the colours, the pictures and your taps are recorded. The keyboard is not.</p>
+<p>Taps: PostHog notes which buttons you tap, by the name we gave each button in the app's code, never by what the button shows. It also notes when the same spot is tapped several times in a row, which tells us something looked tappable and did not respond.</p>
+<p>Crash and error reports: if the app crashes, it sends PostHog a crash report the next time you open it. If a request to our server fails in a way you can see, the app sends a short error report. Both contain technical details only: what failed, where in the app's code, and the error code. Never what you wrote.</p>
+<p>Widgets: which MyQuarter widgets you have added to your home and lock screens, and when you tap one. A tick you make on a widget is noted on your phone and sent the next time you open the app.</p>
 <p>Send feedback: if you send a note from the app's menu, PostHog receives its text, the type you picked (if any), the app version and the name of the screen you were on, linked to your random account ID. We read these notes to improve MyQuarter. To have one deleted, email us. If you are offline, the note waits on your phone and is sent when you are back online.</p>
-<p>PostHog also receives your IP address, as any internet service does, and basic details about your device, such as its model, iOS version, language and app version. It may use the IP address to estimate a rough location.</p>
+<p>PostHog also receives your IP address, as any internet service does, and basic details about your device, such as its model, iOS version, language and app version. It may use the IP address to estimate a rough location. The app sends all of this through a small relay on our own server (Supabase), which passes it straight to PostHog and does not store it, apart from the short-term server logs described under &quot;How long we keep it&quot;.</p>
 <p>PostHog keeps a random identifier on your phone so it can tell visits apart. It is replaced when you sign out or delete your account. We do not use analytics for advertising.</p>
 
 <h2 id="emails-and-notifications">Emails and notifications</h2>
@@ -176,7 +183,7 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-r
 <p>If you test MyQuarter through TestFlight, Apple shares with us the crash reports and the feedback you choose to send through TestFlight, under Apple's own terms.</p>
 
 <h2 id="storage-on-your-phone">Storage on your phone</h2>
-<p>The app keeps some information on your phone so it works smoothly: your sign-in, kept in the iOS Keychain; your theme; which introductory screens you have seen; what you are writing before it saves (your name and vision before you sign up, today's reflection, a vision edit); and the last coaching notes and goal ideas the app showed you, together with the vision text they were written for. PostHog also keeps a random identifier, as described above.</p>
+<p>The app keeps some information on your phone so it works smoothly: your sign-in, kept in the iOS Keychain; your theme; which introductory screens you have seen; what you are writing before it saves (your name and vision before you sign up, today's reflection, a vision edit); and the last coaching notes and goal ideas the app showed you, together with the vision text they were written for. PostHog also keeps a random identifier, as described above, and holds analytics, screen recordings and crash reports on the phone until they are sent. Widget taps waiting to be counted are kept in the space the app shares with its widgets.</p>
 <p>Signing out removes your sign-in, and any unsaved reflection or vision edit, from the phone. Deleting your account removes everything the app keeps on the phone you delete it from.</p>
 <p>Add to calendar: if you add an action to your calendar, the app opens Apple's own event screen, filled in with the action and its goal title. If you save it, the event goes into the calendar you choose, and that calendar's own service (for example iCloud or Google) receives it if it syncs. We save the date and time you picked so the app can show it back to you. The app does not read your calendar.</p>
 
@@ -186,7 +193,7 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-r
   <li>Supabase: database, sign-in, account emails and server functions. Your account and everything you write are stored in Supabase's Sydney, Australia region. Server functions, including the ones that pass requests to our AI provider, may run outside Australia.</li>
   <li>Google (Gemini API): the AI features.</li>
   <li>Anthropic (Claude API): backup AI provider, only used if we switch to it.</li>
-  <li>PostHog: product analytics, on its United States cloud.</li>
+  <li>PostHog: product analytics, screen recordings, and crash and error reports, on its United States cloud.</li>
   <li>Google or Apple: sign-in, only if you choose to sign in with them.</li>
   <li>Apple: TestFlight crash reports and feedback, if you test the beta.</li>
 </ul>
