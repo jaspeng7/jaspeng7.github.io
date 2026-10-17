@@ -78,7 +78,7 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-r
 <main>
 <a class="brand" href="./">MyQuarter</a>
 <h1>Privacy policy</h1>
-<p class="effective">Effective 12 October 2026. Last updated 16 October 2026.</p>
+<p class="effective">Effective 12 October 2026. Last updated 17 October 2026.</p>
 <nav class="contents" aria-label="Contents"><p>Contents</p><ul>
   <li><a href="#about-this-policy">About this policy</a></li>
   <li><a href="#the-short-version">The short version</a></li>
@@ -120,10 +120,11 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-r
   <li>What you write in the app: your vision across five life areas (physical, mental, relational, financial and professional), including your answers to prompts such as what you will no longer tolerate; your goals, due dates and actions; the days you tick an action off, and how many times; your habits, the life area you file each one under, and your habit check-ins; your daily and weekly reflections; the notes you write in your journal; your priority cards, including any name you enter when you hand a card to someone; and how each goal turned out at the end of a season.</li>
   <li>Your settings: theme, reminder and notification choices and times, time zone, and whether AI coaching is on.</li>
   <li>Information the app makes from yours: execution scores calculated from your ticks, and AI-written area summaries and weekly strengths and concerns, which are saved with your writing so they do not have to be written twice.</li>
+  <li>Feedback you send: if you use Send feedback in the app's menu, the note you write and the type you pick. See &quot;Analytics&quot;.</li>
 </ul>
 <p>Information collected automatically:</p>
 <ul>
-  <li>Usage analytics: which screens you open and when you complete key steps, such as finishing onboarding, creating a goal, ticking off an action or asking for an AI suggestion. See &quot;Analytics&quot;.</li>
+  <li>Usage analytics: when you open and close the app, which screens you open, and when you complete key steps, such as finishing onboarding, creating a goal, ticking off an action or a habit, or asking for an AI suggestion. See &quot;Analytics&quot;.</li>
   <li>Technical information: your IP address, device model, iOS version, app version, and the times you use the app. Our database and analytics providers receive this as part of running their services.</li>
 </ul>
 <p>Before you create an account: you can start writing your vision before you sign up. What you write is kept on your phone, and the app signs you in anonymously so the AI features can work. When you create your account, that anonymous sign-in becomes your account. If you never create one, the anonymous sign-in stays on our servers until we remove it. There is no automatic clean-up for these yet.</p>
@@ -162,8 +163,9 @@ a:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-r
 
 <h2 id="analytics">Analytics</h2>
 <p>We use PostHog, on its United States cloud, to understand how the app is used, for example how many people finish onboarding or tick off an action. The app sends PostHog the name of each screen you open and named events such as &quot;goal created&quot; or &quot;lead action ticked&quot;, sometimes with a number or a label: the week number, a score, or which life area or AI feature was used.</p>
-<p>When you are signed in, these are linked to a random account ID. We never send PostHog your email address, your name, or anything you write.</p>
-<p>Automatic tap capture, session replay and error capture are switched off, so PostHog does not record what is on your screen or what you type.</p>
+<p>When you are signed in, these are linked to a random account ID. We never send PostHog your email address, your name, or anything you write, except a feedback note you choose to send (below).</p>
+<p>Automatic tap capture, session replay and error capture are switched off, so PostHog does not record what is on your screen or what you type. It does note when the same spot is tapped several times in a row: where on the screen, and the kind of control, never what it shows. That tells us something looked tappable and did not respond.</p>
+<p>Send feedback: if you send a note from the app's menu, PostHog receives its text, the type you picked (if any), the app version and the name of the screen you were on, linked to your random account ID. We read these notes to improve MyQuarter. To have one deleted, email us. If you are offline, the note waits on your phone and is sent when you are back online.</p>
 <p>PostHog also receives your IP address, as any internet service does, and basic details about your device, such as its model, iOS version, language and app version. It may use the IP address to estimate a rough location.</p>
 <p>PostHog keeps a random identifier on your phone so it can tell visits apart. It is replaced when you sign out or delete your account. We do not use analytics for advertising.</p>
 
